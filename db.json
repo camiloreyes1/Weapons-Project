@@ -1,0 +1,27 @@
+{
+  "weapons": [
+      {
+        "id": 1,
+        "name": "AN/TWQ-1 Avenger",
+        "type": "Surface to Air"
+      },
+
+      {
+        "id": 2,
+        "name": "RIM-2 Terrier",
+        "type": "Surface to Air"
+      },
+
+      {
+        "id": 3,
+        "name": "FIM-92 Stinger",
+        "type": "Surface to Air"
+      },
+
+      {
+        "id": 4,
+        "name": "FIM-43 Redeye",
+        "type": "Surface to Air"
+      }
+  ]
+}

@@ -7,6 +7,7 @@ import { AddWeaponComponent } from './add-weapon/add-weapon.component';
 import { AllWeaponsComponent } from './all-weapons/all-weapons.component';
 import { EditWeaponComponent } from './edit-weapon/edit-weapon.component';
 import { DeleteWeaponComponent } from './delete-weapon/delete-weapon.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Define routes for each component in the app
 const routes: Routes = [
@@ -16,7 +17,6 @@ const routes: Routes = [
   { path: 'delete-weapon', component: DeleteWeaponComponent }, // Route for deleting a weapon
   { path: 'edit-weapon/:id', component: EditWeaponComponent }, // Route for editing a weapon (dynamic id)
 ];
-
 
 @NgModule({
   declarations: [
@@ -28,7 +28,9 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
