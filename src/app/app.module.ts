@@ -3,34 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddWeaponComponent } from './add-weapon/add-weapon.component';
-import { AllWeaponsComponent } from './all-weapons/all-weapons.component';
-import { EditWeaponComponent } from './edit-weapon/edit-weapon.component';
-import { DeleteWeaponComponent } from './delete-weapon/delete-weapon.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-// Define routes for each component in the app
-const routes: Routes = [
-  { path: '', redirectTo: 'all-weapons', pathMatch: 'full' }, // Redirect root path to "all-weapons"
-  { path: 'all-weapons', component: AllWeaponsComponent }, // Route for listing all weapons
-  { path: 'add-weapon', component: AddWeaponComponent }, // Route for adding a new weapon
-  { path: 'delete-weapon', component: DeleteWeaponComponent }, // Route for deleting a weapon
-  { path: 'edit-weapon/:id', component: EditWeaponComponent }, // Route for editing a weapon (dynamic id)
-];
+import { WeaponAddEditComponent } from './weapon-add-edit/weapon-add-edit.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card'
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddWeaponComponent,
-    AllWeaponsComponent,
-    EditWeaponComponent,
-    DeleteWeaponComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

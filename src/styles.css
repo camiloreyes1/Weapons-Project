@@ -1,4 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+  margin: 20px; /* Add spacing around the container */
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+mat-toolbar {
+  margin-bottom: 20px; /* Add spacing below the toolbar */
+}
+
+mat-card {
+  padding: 16px; /* Add padding inside the card */
+}
