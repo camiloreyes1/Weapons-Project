@@ -1,10 +1,29 @@
-<div class="container">
-  <mat-toolbar>
-    <span>Munition Inventory</span>
-    <span class="example-spacer"></span>
-  </mat-toolbar>
+<mat-toolbar color="primary">
+  <span>Munition Inventory</span>
+</mat-toolbar>
 
-  <mat-card appearance="outlined">
-    <mat-card-content>Simple card</mat-card-content>
-  </mat-card>
+<div class="container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let weapon"> {{ weapon.id }} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let weapon"> {{ weapon.name }} </td>
+    </ng-container>
+
+    <!-- Type Column -->
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef> Type </th>
+      <td mat-cell *matCellDef="let weapon"> {{ weapon.type }} </td>
+    </ng-container>
+
+    <!-- Header and Row Declarations -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
 </div>
