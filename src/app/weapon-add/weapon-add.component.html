@@ -1,0 +1,15 @@
+<mat-card>
+  <form (ngSubmit)="onSubmit()" #weaponForm="ngForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" name="name" [(ngModel)]="weapon.name" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <input matInput type="text" name="type" [(ngModel)]="weapon.type" required />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Add Weapon</button>
+  </form>
+</mat-card>

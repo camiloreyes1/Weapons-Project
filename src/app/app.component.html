@@ -1,9 +1,12 @@
 <mat-toolbar color="primary">
   <span>Munition Inventory</span>
+
 </mat-toolbar>
 
+<app-weapon-add></app-weapon-add>
+
 <div class="container">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 custom-table">
     <!-- ID Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> ID </th>

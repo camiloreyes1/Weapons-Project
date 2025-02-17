@@ -11,7 +11,7 @@ export class WeaponService {
   constructor(private httpClient: HttpClient) { }
 
   addWeapon(data: any): Observable<any> {
-    return this.httpClient.post(this.baseUrl + 'weapons', data)
+    return this.httpClient.post(`${this.baseUrl}/weapons`, data);
   }
 
   editWeapon(id: number, data: any): Observable<any> {

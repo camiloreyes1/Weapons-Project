@@ -9,9 +9,15 @@ import { MatCardModule } from '@angular/material/card'
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
+import { WeaponAddComponent } from './weapon-add/weapon-add.component';
+import { MatFormFieldModule
+ } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
+    WeaponAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatTableModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

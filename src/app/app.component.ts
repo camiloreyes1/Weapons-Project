@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
+
 export class AppComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'type']; // Table columns to display
   dataSource!: MatTableDataSource<any>; // Data source for the Material table
@@ -19,6 +20,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.getWeapons(); // Fetch weapons data when the component initializes
+    this.refreshWeaponList();
   }
 
   // Method to fetch weapons data from the service
@@ -31,6 +33,12 @@ export class AppComponent implements OnInit {
         console.error('Failed to fetch weapons data', error); // Handle errors gracefully
       }
     );
+  }
+
+  refreshWeaponList(): void {
+    this.weaponService.getWeapons().subscribe((weapons) => {
+      this.dataSource = new MatTableDataSource(weapons);
+    })
   }
 }
 

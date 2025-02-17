@@ -1,12 +1,16 @@
-mat-toolbar {
-  margin-top: 20px; /* Add spacing above the toolbar */
-  margin-left: 10px; /* Add spacing to the left */
-  margin-right: 10px; /* Add spacing to the right */
+/* Add spacing between columns */
+.custom-table th.mat-header-cell,
+.custom-table td.mat-cell {
+  padding: 16px 24px; /* Adjust these values for more or less space */
 }
 
-mat-card {
-  margin-top: 20px; /* Add spacing above the card */
-  margin-left: 10px; /* Add spacing to the left */
-  margin-right: 10px; /* Add spacing to the right */
-  padding: 16px; /* Optional: Padding inside the card */
+/* Optional: Center-align text for better readability */
+.custom-table th.mat-header-cell,
+.custom-table td.mat-cell {
+  text-align: center;
+}
+
+/* Optional: Add spacing between rows */
+.custom-table tr {
+  margin-bottom: 8px; /* Adjust row spacing */
 }
