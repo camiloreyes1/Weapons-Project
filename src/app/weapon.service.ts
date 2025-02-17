@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class WeaponService {
-  baseUrl: string = "http://localhost:3000/";
+  // Updated baseUrl to use proxy path
+  baseUrl: string = "/api";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -15,16 +16,15 @@ export class WeaponService {
   }
 
   editWeapon(id: number, data: any): Observable<any> {
-    return this.httpClient.put(`${this.baseUrl}/weapons/${id}`, data)
+    return this.httpClient.put(`${this.baseUrl}/weapons/${id}`, data);
   }
 
   getWeapons(): Observable<any> {
-    return this.httpClient.get(this.baseUrl + 'weapons')
+    return this.httpClient.get(`${this.baseUrl}/weapons`);
   }
 
   deleteWeapon(id: number): Observable<any> {
-    // Use backticks for the URL to include the ID dynamically
     return this.httpClient.delete<any>(`${this.baseUrl}/weapons/${id}`);
   }
-
 }
+
