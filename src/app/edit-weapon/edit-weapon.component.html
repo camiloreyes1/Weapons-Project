@@ -1,1 +1,60 @@
-<p>edit-weapon works!</p>
+<div class="edit-weapon-container">
+  <mat-card class="edit-weapon-card">
+    <mat-card-title>Edit Weapon</mat-card-title>
+    <mat-card-content>
+      <form #weaponForm="ngForm" (ngSubmit)="onSubmit()">
+        <!-- Weapon ID (Read-Only) -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Weapon ID</mat-label>
+          <input
+            matInput
+            type="text"
+            [(ngModel)]="weapon.id"
+            name="id"
+            readonly
+          />
+        </mat-form-field>
+
+        <!-- Weapon Name -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Weapon Name</mat-label>
+          <input
+            matInput
+            type="text"
+            [(ngModel)]="weapon.name"
+            name="name"
+            required
+          />
+        </mat-form-field>
+
+        <!-- Weapon Type -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Weapon Type</mat-label>
+          <input
+            matInput
+            type="text"
+            [(ngModel)]="weapon.type"
+            name="type"
+            required
+          />
+        </mat-form-field>
+
+        <!-- Save Button -->
+        <div class="action-buttons">
+          <button mat-raised-button color="primary" type="submit">
+            Save
+          </button>
+          <button
+            mat-raised-button
+            color="warn"
+            type="button"
+            (click)="cancelEdit()"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+  

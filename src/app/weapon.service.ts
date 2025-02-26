@@ -15,7 +15,7 @@ export class WeaponService {
     return this.httpClient.post(`${this.baseUrl}/weapons`, data);
   }
 
-  editWeapon(id: number, data: any): Observable<any> {
+  editWeapon(id: string, data: any): Observable<any> {
     return this.httpClient.put(`${this.baseUrl}/weapons/${id}`, data);
   }
 
@@ -23,8 +23,15 @@ export class WeaponService {
     return this.httpClient.get(`${this.baseUrl}/weapons`);
   }
 
-  deleteWeapon(id: number): Observable<any> {
+  deleteWeapon(id: string): Observable<any> {
     return this.httpClient.delete<any>(`${this.baseUrl}/weapons/${id}`);
   }
+
+    // Get a weapon by ID
+    getWeaponById(id: string): Observable<any> {
+      return this.httpClient.get(`${this.baseUrl}/${id}`);
+    }
+
+
 }
 

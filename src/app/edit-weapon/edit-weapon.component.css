@@ -1,0 +1,22 @@
+.edit-weapon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.edit-weapon-card {
+  width: 400px;
+  padding: 20px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+}

@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: "", redirectTo: 'all-weapons', pathMatch: 'full'},
   { path: "all-weapons", component: AllWeaponsComponent},
   { path: "add-weapon", component: WeaponAddComponent},
-  { path: "edit-weapon", component: EditWeaponComponent}
+  { path: "edit-weapon/:id", component: EditWeaponComponent}
 ]
 
 @NgModule({

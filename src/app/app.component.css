@@ -14,3 +14,11 @@
 .custom-table tr {
   margin-bottom: 8px; /* Adjust row spacing */
 }
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar button {
+  margin-right: 10px;
+}
