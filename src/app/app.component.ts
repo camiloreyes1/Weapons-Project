@@ -10,7 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 
 export class AppComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'type']; // Table columns to display
+  displayedColumns: string[] = ['id', 'name', 'type', 'actions']; // Table columns to display
   dataSource!: MatTableDataSource<any>; // Data source for the Material table
 
   constructor(

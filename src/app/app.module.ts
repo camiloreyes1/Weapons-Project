@@ -16,7 +16,6 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { EditWeaponComponent } from './edit-weapon/edit-weapon.component';
-import { AllWeaponsComponent } from './all-weapons/all-weapons.component';
 
 
 @NgModule({
@@ -24,7 +23,6 @@ import { AllWeaponsComponent } from './all-weapons/all-weapons.component';
     AppComponent,
     WeaponAddComponent,
     EditWeaponComponent,
-    AllWeaponsComponent,
   ],
   imports: [
     BrowserModule,
