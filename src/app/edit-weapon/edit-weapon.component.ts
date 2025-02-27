@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-edit-weapon',
@@ -7,32 +8,81 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./edit-weapon.component.css'],
 })
 export class EditWeaponComponent implements OnInit {
-  weapon = { id: '', name: '', type: '' }; // Placeholder for weapon data
+  // Weapon object to hold the weapon's data
+  weapon = { id: '', name: '', type: '' };
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  // Base URL for JSON server
+  apiUrl = 'http://localhost:3000/weapons';
+
+  constructor(
+    private route: ActivatedRoute, // To access route parameters
+    private router: Router, // To navigate to other routes
+    private http: HttpClient // To make HTTP requests
+  ) {}
 
   ngOnInit(): void {
-    // Retrieve weapon details using ID from the route (example logic)
+    // Get the weapon ID from the route parameters
     const weaponId = this.route.snapshot.paramMap.get('id');
+
+    // If an ID exists, load the weapon details
     if (weaponId) {
       this.loadWeaponDetails(weaponId);
     }
   }
 
+  /**
+   * Load the weapon details from the server using the provided ID.
+   * @param id - The ID of the weapon to be loaded.
+   */
   loadWeaponDetails(id: string): void {
-    // Example logic: Replace with actual API call
-    console.log('Loading weapon details for ID:', id);
-    // Mock data
-    this.weapon = { id, name: 'Example Weapon', type: 'Ranged' };
+    this.http.get(`${this.apiUrl}/${id}`).subscribe(
+      (data: any) => {
+        // Populate the weapon object with the data retrieved from the server
+        this.weapon = data;
+      },
+      (error) => {
+        // Handle errors, such as if the weapon is not found
+        console.error('Error loading weapon details:', error);
+      }
+    );
   }
 
+  /**
+   * Save the weapon's data (either create a new entry or update an existing one).
+   */
   onSubmit(): void {
-    console.log('Saving weapon:', this.weapon);
-    // Add save logic here (e.g., API call to update the weapon)
-    alert('Weapon updated successfully!');
-    this.router.navigate(['/all-weapons']); // Redirect after saving
+    if (this.weapon.id) {
+      // Update an existing weapon
+      this.http.put(`${this.apiUrl}/${this.weapon.id}`, this.weapon).subscribe(
+        () => {
+          // Notify the user and navigate to the weapons list after saving
+          alert('Weapon updated successfully!');
+          this.router.navigate(['/all-weapons']);
+        },
+        (error) => {
+          // Handle errors during the update
+          console.error('Error updating weapon:', error);
+        }
+      );
+    } else {
+      // Create a new weapon if no ID exists
+      this.http.post(this.apiUrl, this.weapon).subscribe(
+        () => {
+          // Notify the user and navigate to the weapons list after saving
+          alert('Weapon created successfully!');
+          this.router.navigate(['/all-weapons']);
+        },
+        (error) => {
+          // Handle errors during creation
+          console.error('Error creating weapon:', error);
+        }
+      );
+    }
   }
 
+  /**
+   * Cancel the edit and navigate back to the weapons list.
+   */
   cancelEdit(): void {
     // Redirect to the weapons list when the user cancels
     this.router.navigate(['/all-weapons']);
