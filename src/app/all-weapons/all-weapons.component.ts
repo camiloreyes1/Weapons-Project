@@ -39,4 +39,14 @@ export class AllWeaponsComponent implements OnInit {
         this.dataSource = new MatTableDataSource(weapons);
       })
     }
+
+
+  deleteWeapon(id: string): void {
+    if (confirm('Are you sure you want to delete this weapon?')) {
+      this.weaponService.deleteWeapon(id).subscribe(() => {
+        this.getWeapons(); // Reload the weapon list after deletion
+      });
+    }
+  }
+
 }

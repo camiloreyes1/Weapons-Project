@@ -19,6 +19,7 @@ import { EditWeaponComponent } from './edit-weapon/edit-weapon.component';
 import { AllWeaponsComponent } from './all-weapons/all-weapons.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { MatOptionModule } from '@angular/material/core';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
