@@ -27,19 +27,16 @@
           />
         </mat-form-field>
 
-        <!-- Weapon Type -->
+        <!-- Weapon Type (Dropdown) -->
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Weapon Type</mat-label>
-          <input
-            matInput
-            type="text"
-            [(ngModel)]="weapon.type"
-            name="type"
-            required
-          />
+          <mat-select [(ngModel)]="weapon.type" name="type" required>
+            <mat-option value="Surface to Air">Surface to Air</mat-option>
+            <mat-option value="Surface to Surface">Surface to Surface</mat-option>
+          </mat-select>
         </mat-form-field>
 
-        <!-- Save Button -->
+        <!-- Action Buttons -->
         <div class="action-buttons">
           <button mat-raised-button color="primary" type="submit">
             Save
@@ -57,4 +54,3 @@
     </mat-card-content>
   </mat-card>
 </div>
-  
