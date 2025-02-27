@@ -1,15 +1,20 @@
-<mat-card>
-  <form (ngSubmit)="onSubmit()" #weaponForm="ngForm">
-    <mat-form-field appearance="fill">
-      <mat-label>Name</mat-label>
-      <input matInput type="text" name="name" [(ngModel)]="weapon.name" required />
-    </mat-form-field>
+<div class="weapon-form-container">
+  <mat-card class="weapon-card">
+    <form (ngSubmit)="onSubmit()" #weaponForm="ngForm">
+      <h2>Add New Weapon</h2>
+      <mat-form-field class="weapon-form-field" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" name="name" [(ngModel)]="weapon.name" required />
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Type</mat-label>
-      <input matInput type="text" name="type" [(ngModel)]="weapon.type" required />
-    </mat-form-field>
+      <mat-form-field class="weapon-form-field" appearance="fill">
+        <mat-label>Type</mat-label>
+        <input matInput type="text" name="type" [(ngModel)]="weapon.type" required />
+      </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit">Add Weapon</button>
-  </form>
-</mat-card>
+      <div class="form-actions">
+        <button mat-raised-button color="primary" type="submit">Add Weapon</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

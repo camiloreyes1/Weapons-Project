@@ -1,0 +1,44 @@
+.weapon-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9; /* Slightly brighter background */
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.weapon-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #ffffff;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #4a90e2; /* Modern blue for the title */
+}
+
+.weapon-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+button {
+  flex: 1; /* Equal button widths */
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
